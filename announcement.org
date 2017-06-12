@@ -1,0 +1,66 @@
+#+TITLE: GNU Radio Workshop
+
+* Announcement
+
+This year, for the first time, we present a free GNU Radio workshop as introductory session to the Software Defined Radio Academy 2017.
+The workshop will be held by Marcus Mueller and Bastian Bloessl, two regular contributors to GNU Radio.
+It will take place on
+
+Friday, July 14, 2017 at 16:00--18:00 in [[https://www.messe-friedrichshafen.de/mfn-wAssets/flash/panorama/raum-schweiz/index.html][Room "Schweiz", Messezentrum West]],
+
+where we can host an audience of up to 50 people.
+
+
+** Prerequisites
+
+We will be happy to help with our know-how, but we cannot provide a complete setup for everybody.
+So please make sure to bring at least your own laptop.
+
+If you already own an SDR, you are more than welcome to use it.
+The minimum requirements for the workshop are quite relaxed.
+The SDR should be able to receive on the 70cm or the 2m band with a minimum bandwidth of 0.5MHz.
+Furthermore, it should be supported by either UHD or gr-osmosdr.
+
+*No SDR? No problem!* Even if you don't own an SDR yet, you are welcome to join the workshop.
+We will bring at least 20 RTL-SDR dongles with us that we can lend you for the workshop.
+
+Ideally, you would have a recent version of GNU Radio pre-installed in your familiar environment.
+This is, however, not a requirement.
+We know that Linux has a steep learning curve and that GNU Radio built a reputation of being hard to install.
+We will, therefore, provide USB sticks with a live environment that will get you up and running instantly.
+You won't have to install anything.
+Just boot from the USB stick and you are good to go.
+
+
+** Program
+
+After a brief overview of GNU Radio and an introduction to the basic concepts, we will immediately get our hands dirty.
+Step by step, we will build our own FM receiver.
+We will make heavy use of the graphical outputs to look at the signal at various stages of the decoding process.
+This helps us in understanding how a digital FM receiver is implemented and how it is realized in GNU Radio.
+(We assume that there will be more than enough transmitters to test our FM receiver on the 70cm and 2m band.)
+
+Once we have a working FM receiver, we will go ahead and extend for digital modes.
+For this, we will make use of, so called, out-of-tree modules that extend GNU Radio with more specific functionality.
+(On www.cgran.org, you can find a comprehensive list of modules for all kinds of use-cases and technologies.)
+In our particular case, we will use an APRS decoder to demonstrate installation of the module and integration into our receiver.
+
+Finally, like real hams, we don't just use existing functionality, but extend GNU Radio with our own blocks.
+With this, we will transition from GNU Radio users to GNU Radio developers.
+Don't worry, we won't focus on programming. (The actual "implementation" will be less than ten lines of code.)
+Instead, the goal is to make you familiar with the workflow that is required to extend GNU Radio with custom functionality.
+
+So in summary, you will learn about:
+- GNU Radio's core concepts
+- building a simple FM receiver
+- using out-of-tree modules for more specific functionality
+- extending GNU Radio with our own custom blocks
+
+
+** Registration
+
+While a formal registration is not required, we would appreciate if you could drop us an email if you are planning to join.
+
+We hope to see you in Friedrichshafen!
+
+
