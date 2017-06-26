@@ -1,10 +1,95 @@
 #+TITLE: GNU Radio Workshop
 
+* Welcome
+  5 minutes
+** Who are we?
+** What's the plan for today?
+
+
 * Intro Presentation
+   30 mintues
+** GNU Radio
+   - real-time signal processing framework for use in SDRs
+   - GNU Radio is the software part of a GPP-based SDR 
+   - Open Source
+   - Large community
+   - Compatible with most HW
+   - Modular and easy to adapt to specific use
+   - It's not the application, but the framework/base components to
+     build an application
+** Flow Graph
+** Blocks
+** Streaming
+** Async Messages
+** GRC
+** GUI Controls
+   - note the difference between
+     - GRC to graphically configure the flow graph
+     - QT to add graphcial controls to the application
+   - show what's possible with QT, but don't give details (-> RDS GUI)
+** GNU Radio applications
+   - RDS (simple extension of GNU Radio with a custom panel)
+   - GQRX (sophisticated application w/ GNU Radio under the hood)
+** OOTs
+   - Huge library of modules
+   - CGRAN lists them
+   - PyBombs helps to install them
+** GNU Radio is an Ecosystem
+   - more then a SDR library/framework
+   - large Open Source community
+   - GNU Radio foundation
+   - GNU Radio conference
+   - Activities like GSoC, SOCIS, R&S Engineering Competition
+   - used BY academia, industry, government, hobbyists, ...
+   - used FOR DSP, security, ham radio, radio astronomy, rapid
+     prototyping, ...
+** Pointers to other Resources
+*** Further information
+    - GNU Radio wiki (in particular the tutorial)
+    - Michael Ossmann's YouTube series
+    - Mailing list archive
+*** Development
+    - issues/PRs on GitHub
+*** Questions?
+    - Mailing list
+    - Stack Overflow
+*** Stay up-to-date
+    - Twitter
+    - *new* Facebook
 
-* Using Plain GNU Radio
-  Build your own FM transceiver
 
-* Using OOT Modules
+* Using GNU Radio: FM Receiver
+   30 mintues
+   Build your own FM transceiver
 
-* Extending GNU Radio
+   - Put in Osmocom source (-> works with all HW)
+   - Use variables for sample rate and gain
+   - Pipe source in GUI Sinks (Waterfall, Frequency, Time domain)
+   - Use GUI Hints to arrange them nicer
+   - Replace variables with Slider
+   - Use Control Panel to change appearance
+   - Connect NB FM Receiver and Audio Sink
+   - Adapt sample rate
+     - down sample before FM Receiver
+     - use exact sample rate of SDR
+     - experiment with parameters to avoid audio under runs
+   - Demonstrate Parameter block
+** TODO what's our advice regarding audio underruns
+
+
+* Using OOTs: APRS
+   30 minutes
+
+
+* Extending GNU Radio w/ Custom OOT
+   30 mintues
+
+
+* Misc
+** TODO Check if there are good introductory slides available (Marcus or Tom maybe)
+** TODO Make Introductory Slides
+** TODO Make slides for hands-on part
+** TODO Idea for custom OOT module
+** TODO Search and test APRS module
+** TODO Prepare Live Image
+** TODO Test Live Image on different PCs and w/ different HW
