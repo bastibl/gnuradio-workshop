@@ -7,26 +7,24 @@
 
 
 * Intro Presentation
-   30 mintues
+  30 mintues
 ** GNU Radio
-   - real-time signal processing framework for use in SDRs
+   - Real-time signal processing framework for use in SDRs
    - GNU Radio is the software part of a GPP-based SDR 
-   - Open Source
-   - Large community
+   - Open Source project with large and active community
    - Compatible with most HW
    - Modular and easy to adapt to specific use
-   - It's not the application, but the framework/base components to
-     build an application
+   - It's not an application, but the framework to build an
+     application
 ** Flow Graph
 ** Blocks
 ** Streaming
 ** Async Messages
 ** GRC
 ** GUI Controls
-   - note the difference between
+   - highlight the difference between
      - GRC to graphically configure the flow graph
      - QT to add graphcial controls to the application
-   - show what's possible with QT, but don't give details (-> RDS GUI)
 ** GNU Radio applications
    - RDS (simple extension of GNU Radio with a custom panel)
    - GQRX (sophisticated application w/ GNU Radio under the hood)
@@ -58,6 +56,11 @@
     - *new* Facebook
 
 
+** TODO Check if there are good introductory slides available (Marcus or Tom maybe)
+** TODO Make Introductory Slides
+** TODO Make slides for hands-on part
+
+
 * Using GNU Radio: FM Receiver
    30 mintues
    Build your own FM transceiver
@@ -79,17 +82,22 @@
 
 * Using OOTs: APRS
    30 minutes
+** TODO Search and test APRS module
 
 
 * Extending GNU Radio w/ Custom OOT
    30 mintues
 
+   - Init with gr_modtool
+   - Add Python block with gr_modtool
+   - Build/install module
+   - Add block to flow graph
+   - Add some simple functionality
+   - Manifest to add module to CGRAN
+
+** TODO What do we want to implement?
+
 
 * Misc
-** TODO Check if there are good introductory slides available (Marcus or Tom maybe)
-** TODO Make Introductory Slides
-** TODO Make slides for hands-on part
-** TODO Idea for custom OOT module
-** TODO Search and test APRS module
 ** TODO Prepare Live Image
 ** TODO Test Live Image on different PCs and w/ different HW
