@@ -4,10 +4,12 @@
   5 minutes
 ** Who are we?
 ** What's the plan for today?
-
+** Who needs SDRs/USB sticks?
 
 * Intro Presentation
   30 mintues
+  - During presentation, other guy checks that everybody has hardware
+    and a working GR installation (native or USB stick).
 ** GNU Radio
    - Real-time signal processing framework for use in SDRs
    - GNU Radio is the software part of a GPP-based SDR 
