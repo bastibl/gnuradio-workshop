@@ -59,13 +59,6 @@
     - *new* Facebook
 
 
-** TODO Check if there are good introductory slides available (Marcus or Tom maybe)
-*** Marcus: pres from first SDRA: http://marcus.hostalia.de/sdra/pres.pdf (also, on github somewhere)
-**** Needs to be cleaned from all examples, Ettus stuff
-** TODO Make Introductory Slides
-** TODO Make slides for hands-on part
-
-
 * Using GNU Radio: FM Receiver
    30 mintues
    Build your own FM transceiver
@@ -90,6 +83,14 @@
    - use APRS from
      [[https://github.com/dl1ksv/gr-ax25/]]
    - usual build procedure
+     #+BEGIN_SRC shell
+       mkdir build
+       cd build
+       cmake ..
+       make
+       sudo make install
+       sudo ldconfig
+     #+END_SRC
    - build hier block (detect mark-space)
    - open APRS flow graph and copy top branch
    - integrate in our flow graph (copy attack, decay parameters)
@@ -102,15 +103,24 @@
    30 mintues
 
    - Init with gr_modtool
-     gr_modtool newmod
-     stdout
+     #+BEGIN_SRC shell
+       gr_modtool newmod
+       stdout
+     #+END_SRC
    - Add Python block with gr_modtool
+     gr_modtool add
    - Build/install module
+     #+BEGIN_SRC shell
+       mkdir build
+       cd build
+       cmake ..
+       make
+       sudo make install
+       sudo ldconfig
+     #+END_SRC
    - Add block to flow graph
-   - Add some simple functionality
+   - Add simple functionality
    - Manifest to add module to CGRAN
-
-** TODO What do we want to implement?
 
 
 * Misc
