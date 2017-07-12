@@ -21,6 +21,7 @@
 #
 
 import numpy
+import sys
 from gnuradio import gr
 
 class stdout(gr.sync_block):
@@ -30,12 +31,14 @@ class stdout(gr.sync_block):
     def __init__(self):
         gr.sync_block.__init__(self,
             name="stdout",
-            in_sig=[<+numpy.float32+>],
+            in_sig=[numpy.int8],
             out_sig=None)
 
 
     def work(self, input_items, output_items):
         in0 = input_items[0]
-        # <+signal processing here+>
+        for i in in0:
+            sys.stdout.write(chr(i))
+
         return len(input_items[0])
 
