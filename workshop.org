@@ -102,6 +102,8 @@
    30 mintues
 
    - Init with gr_modtool
+     gr_modtool newmod
+     stdout
    - Add Python block with gr_modtool
    - Build/install module
    - Add block to flow graph

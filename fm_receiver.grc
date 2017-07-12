@@ -522,7 +522,7 @@
     </param>
     <param>
       <key>_enabled</key>
-      <value>True</value>
+      <value>0</value>
     </param>
     <param>
       <key>file</key>
@@ -573,7 +573,7 @@
     </param>
     <param>
       <key>file</key>
-      <value>/home/basti/sync/iq-145M-2M4-voice.cf32</value>
+      <value>/home/basti/sync/iq-145M-2M4-aprs.cf32</value>
     </param>
     <param>
       <key>_coordinate</key>
@@ -3175,6 +3175,37 @@
     </param>
   </block>
   <block>
+    <key>stdout_stdout</key>
+    <param>
+      <key>alias</key>
+      <value></value>
+    </param>
+    <param>
+      <key>comment</key>
+      <value></value>
+    </param>
+    <param>
+      <key>affinity</key>
+      <value></value>
+    </param>
+    <param>
+      <key>_enabled</key>
+      <value>True</value>
+    </param>
+    <param>
+      <key>_coordinate</key>
+      <value>(568, 616)</value>
+    </param>
+    <param>
+      <key>_rotation</key>
+      <value>0</value>
+    </param>
+    <param>
+      <key>id</key>
+      <value>stdout_stdout_0</value>
+    </param>
+  </block>
+  <block>
     <key>qtgui_tab_widget</key>
     <param>
       <key>alias</key>
@@ -3292,6 +3323,12 @@
   <connection>
     <source_block_id>afsk_ax25decode_1</source_block_id>
     <sink_block_id>blocks_file_sink_0_0</sink_block_id>
+    <source_key>0</source_key>
+    <sink_key>0</sink_key>
+  </connection>
+  <connection>
+    <source_block_id>afsk_ax25decode_1</source_block_id>
+    <sink_block_id>stdout_stdout_0</sink_block_id>
     <source_key>0</source_key>
     <sink_key>0</sink_key>
   </connection>

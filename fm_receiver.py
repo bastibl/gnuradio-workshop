@@ -3,7 +3,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Fm Receiver
-# Generated: Wed Jul 12 18:10:16 2017
+# Generated: Wed Jul 12 18:24:49 2017
 ##################################################
 
 from distutils.version import StrictVersion
@@ -38,6 +38,7 @@ from gnuradio.filter import pfb
 from gnuradio.qtgui import Range, RangeWidget
 import afsk
 import sip
+import stdout
 from gnuradio import qtgui
 
 class fm_receiver(gr.top_block, Qt.QWidget):
@@ -105,6 +106,7 @@ class fm_receiver(gr.top_block, Qt.QWidget):
         self._freq_range = Range(rf_freq - rf_rate/2, rf_freq + rf_rate/2, 1000, 145755000, 1000)
         self._freq_win = RangeWidget(self._freq_range, self.set_freq, "freq", "counter_slider", float)
         self.top_layout.addWidget(self._freq_win)
+        self.stdout_stdout_0 = stdout.stdout()
         self.qtgui_waterfall_sink_x_0 = qtgui.waterfall_sink_c(
         	1024, #size
         	firdes.WIN_BLACKMAN_hARRIS, #wintype
@@ -248,9 +250,7 @@ class fm_receiver(gr.top_block, Qt.QWidget):
         )
         self.blocks_throttle_0 = blocks.throttle(gr.sizeof_gr_complex*1, rf_rate,True)
         self.blocks_sub_xx_0_0_0 = blocks.sub_ff(1)
-        self.blocks_file_source_0 = blocks.file_source(gr.sizeof_gr_complex*1, '/home/basti/sync/iq-145M-2M4-voice.cf32', True)
-        self.blocks_file_sink_0_0 = blocks.file_sink(gr.sizeof_char*1, '/tmp/aprs.txt', False)
-        self.blocks_file_sink_0_0.set_unbuffered(True)
+        self.blocks_file_source_0 = blocks.file_source(gr.sizeof_gr_complex*1, '/home/basti/sync/iq-145M-2M4-aprs.cf32', True)
         self.audio_sink_0 = audio.sink(audio_rate, '', True)
         self.analog_nbfm_rx_0 = analog.nbfm_rx(
         	audio_rate=48000,
@@ -263,7 +263,7 @@ class fm_receiver(gr.top_block, Qt.QWidget):
         ##################################################
         # Connections
         ##################################################
-        self.connect((self.afsk_ax25decode_1, 0), (self.blocks_file_sink_0_0, 0))
+        self.connect((self.afsk_ax25decode_1, 0), (self.stdout_stdout_0, 0))
         self.connect((self.analog_nbfm_rx_0, 0), (self.audio_sink_0, 0))
         self.connect((self.analog_nbfm_rx_0, 0), (self.detectMarkSpace_0_0, 0))
         self.connect((self.analog_nbfm_rx_0, 0), (self.detectMarkSpace_1_0, 0))
