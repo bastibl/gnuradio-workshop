@@ -59,6 +59,8 @@
 
 
 ** TODO Check if there are good introductory slides available (Marcus or Tom maybe)
+*** Marcus: pres from first SDRA: http://marcus.hostalia.de/sdra/pres.pdf (also, on github somewhere)
+**** Needs to be cleaned from all examples, Ettus stuff
 ** TODO Make Introductory Slides
 ** TODO Make slides for hands-on part
 
