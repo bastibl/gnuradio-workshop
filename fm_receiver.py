@@ -3,7 +3,7 @@
 ##################################################
 # GNU Radio Python Flow Graph
 # Title: Fm Receiver
-# Generated: Wed Jul 12 12:45:10 2017
+# Generated: Wed Jul 12 18:10:16 2017
 ##################################################
 
 from distutils.version import StrictVersion
@@ -26,6 +26,7 @@ from PyQt5 import Qt
 from argparse import ArgumentParser
 from detectMarkSpace import detectMarkSpace  # grc-generated hier_block
 from gnuradio import analog
+from gnuradio import audio
 from gnuradio import blocks
 from gnuradio import eng_notation
 from gnuradio import filter
@@ -77,7 +78,7 @@ class fm_receiver(gr.top_block, Qt.QWidget):
         ##################################################
         self.rf_rate = rf_rate = 2400000
         self.rf_freq = rf_freq = 145000000
-        self.freq = freq = 144791400
+        self.freq = freq = 145755000
 
         self.channel_filter = channel_filter = firdes.low_pass(1.0, rf_rate, 9000, 1000, firdes.WIN_HAMMING, 6.76)
 
@@ -101,7 +102,7 @@ class fm_receiver(gr.top_block, Qt.QWidget):
         self.tab_layout_1.addLayout(self.tab_grid_layout_1)
         self.tab.addTab(self.tab_widget_1, 'Channel')
         self.top_layout.addWidget(self.tab)
-        self._freq_range = Range(rf_freq - rf_rate/2, rf_freq + rf_rate/2, 1000, 144791400, 1000)
+        self._freq_range = Range(rf_freq - rf_rate/2, rf_freq + rf_rate/2, 1000, 145755000, 1000)
         self._freq_win = RangeWidget(self._freq_range, self.set_freq, "freq", "counter_slider", float)
         self.top_layout.addWidget(self._freq_win)
         self.qtgui_waterfall_sink_x_0 = qtgui.waterfall_sink_c(
@@ -247,9 +248,10 @@ class fm_receiver(gr.top_block, Qt.QWidget):
         )
         self.blocks_throttle_0 = blocks.throttle(gr.sizeof_gr_complex*1, rf_rate,True)
         self.blocks_sub_xx_0_0_0 = blocks.sub_ff(1)
-        self.blocks_file_source_0 = blocks.file_source(gr.sizeof_gr_complex*1, '/home/basti/src/gr-workshop/iq-145M-2M4.cf32', True)
+        self.blocks_file_source_0 = blocks.file_source(gr.sizeof_gr_complex*1, '/home/basti/sync/iq-145M-2M4-voice.cf32', True)
         self.blocks_file_sink_0_0 = blocks.file_sink(gr.sizeof_char*1, '/tmp/aprs.txt', False)
         self.blocks_file_sink_0_0.set_unbuffered(True)
+        self.audio_sink_0 = audio.sink(audio_rate, '', True)
         self.analog_nbfm_rx_0 = analog.nbfm_rx(
         	audio_rate=48000,
         	quad_rate=48000,
@@ -262,6 +264,7 @@ class fm_receiver(gr.top_block, Qt.QWidget):
         # Connections
         ##################################################
         self.connect((self.afsk_ax25decode_1, 0), (self.blocks_file_sink_0_0, 0))
+        self.connect((self.analog_nbfm_rx_0, 0), (self.audio_sink_0, 0))
         self.connect((self.analog_nbfm_rx_0, 0), (self.detectMarkSpace_0_0, 0))
         self.connect((self.analog_nbfm_rx_0, 0), (self.detectMarkSpace_1_0, 0))
         self.connect((self.blocks_file_source_0, 0), (self.blocks_throttle_0, 0))
