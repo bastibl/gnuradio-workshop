@@ -79,13 +79,16 @@
      - use exact sample rate of SDR
      - experiment with parameters to avoid audio under runs
    - Demonstrate Parameter block
-** TODO what's our advice regarding audio underruns
-
 
 * Using OOTs: APRS
    30 minutes
-** TODO Search and test APRS module
-
+   - use APRS from
+     [[https://github.com/dl1ksv/gr-ax25/]]
+   - build hier block (detect mark space)
+   - open APRS flow graph and copy top branch
+   - integrate in our flow graph (copy attack, decay parameters)
+   - if hell breaks loose. Dl IQ dump 380M
+     [[http://www.ccs-labs.org/~bloessl/iq-145M-2M4-aprs.cf32]]
 
 * Extending GNU Radio w/ Custom OOT
    30 mintues
