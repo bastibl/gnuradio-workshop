@@ -123,6 +123,3 @@
    - Manifest to add module to CGRAN
 
 
-* Misc
-** TODO Prepare Live Image
-** TODO Test Live Image on different PCs and w/ different HW
